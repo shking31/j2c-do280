@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: declarative-app
+  name: declarative-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: declarative-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: declarative-app
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+        resources:
+          limits:
+            cpu: 50m
+            memory: 100Mi
+status: {}
+
