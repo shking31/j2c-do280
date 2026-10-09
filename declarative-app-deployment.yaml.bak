@@ -6,7 +6,7 @@ metadata:
     app: declarative-app
   name: declarative-app
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: declarative-app
@@ -16,10 +16,9 @@ spec:
       creationTimestamp: null
       labels:
         app: declarative-app
-        access: external
     spec:
       containers:
-      - image: httpd:2.4
+      - image: httpd
         name: httpd
         resources:
           limits:
